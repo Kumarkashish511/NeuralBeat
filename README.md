@@ -1,9 +1,9 @@
 <<<<<<< HEAD
-# 🎵 Aether - AI Music Generation Platform
+# 🎵 NeuralBeat - AI Music Generation Platform
 
 <div align="center">
 
-![Aether Logo](public/swords.svg)
+
 
 **The world's most advanced AI music creation platform. Create professional songs, beats, and compositions with cutting-edge artificial intelligence.**
 
@@ -17,7 +17,7 @@
 
 ## 🌟 Overview
 
-Aether is a cutting-edge AI-powered music generation platform that transforms your creative ideas into professional-quality songs. Using advanced artificial intelligence, it generates original lyrics and converts them into high-quality audio tracks with customizable parameters.
+NeuralBeat is a cutting-edge AI-powered music generation platform that transforms your creative ideas into professional-quality songs. Using advanced artificial intelligence, it generates original lyrics and converts them into high-quality audio tracks with customizable parameters.
 
 ### ✨ Key Features
 
