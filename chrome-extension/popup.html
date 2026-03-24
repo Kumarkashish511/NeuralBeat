@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aether - AI Music Generator</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+  <div class="container">
+    <!-- Header -->
+    <div class="header">
+      <div class="logo">
+        <img src="logo.png" alt="Aether Logo" class="logo-icon" width="24" height="24">
+        <span class="logo-text">Aether</span>
+      </div>
+      <div id="playingIndicator" class="playing-indicator" style="display: none;">
+        <span class="playing-dot"></span>
+        <span>Playing</span>
+      </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main-content">
+      <!-- Input Section -->
+      <div class="input-section">
+        <div class="input-wrapper">
+          <textarea id="promptInput" class="prompt-input"
+            placeholder="Describe your song... (e.g., 'Drake song about late night vibes')" rows="2"></textarea>
+        </div>
+
+        <!-- Settings -->
+        <div class="settings-panel" id="settingsPanel">
+          <div class="setting-item">
+            <label for="temperature">Creativity</label>
+            <div class="slider-wrapper">
+              <input type="range" id="temperature" min="0.1" max="2.0" step="0.1" value="1.7">
+              <span class="slider-value" id="temperatureValue">1.7</span>
+            </div>
+          </div>
+          <div class="setting-item">
+            <label for="balance">Vocal Balance</label>
+            <div class="slider-wrapper">
+              <input type="range" id="balance" min="0" max="2.0" step="0.1" value="0.7">
+              <span class="slider-value" id="balanceValue">0.7</span>
+            </div>
+          </div>
+          <div class="setting-item">
+            <label for="bpm">BPM</label>
+            <div class="slider-wrapper">
+              <input type="range" id="bpm" min="60" max="200" step="5" value="120">
+              <span class="slider-value" id="bpmValue">120</span>
+            </div>
+          </div>
+        </div>
+
+        <button id="generateBtn" class="generate-btn">
+          <span class="btn-text">Generate Song</span>
+          <svg class="btn-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+            stroke-width="2">
+            <path d="M5 12h14M12 5l7 7-7 7" />
+          </svg>
+        </button>
+
+        <button id="toggleSettings" class="toggle-settings-btn">
+          <span>⚙️ Settings</span>
+        </button>
+      </div>
+
+      <!-- Progress Section -->
+      <div class="progress-section" id="progressSection" style="display: none;">
+        <div class="progress-bar-wrapper">
+          <div class="progress-bar" id="progressBar"></div>
+        </div>
+        <div class="progress-text">
+          <span id="progressStatus">Initializing...</span>
+          <span id="progressPercentage">0%</span>
+        </div>
+        <div class="progress-message" id="progressMessage"></div>
+      </div>
+
+      <!-- Result Section -->
+      <div class="result-section" id="resultSection" style="display: none;">
+        <div class="result-header">
+          <h3 id="songTitle">Generated Song</h3>
+          <button id="closeResult" class="close-btn">×</button>
+        </div>
+
+        <div class="audio-player" id="audioPlayer">
+          <div class="player-controls">
+            <button id="playBtn" class="control-btn">▶</button>
+            <div class="progress-container">
+              <div class="time-display">
+                <span id="currentTime">0:00</span> / <span id="duration">0:00</span>
+              </div>
+              <input type="range" id="seekBar" class="seek-bar" min="0" max="100" value="0">
+            </div>
+            <button id="volumeBtn" class="control-btn">🔊</button>
+          </div>
+          <audio id="audioElement" preload="metadata"></audio>
+        </div>
+
+        <div class="lyrics-section" id="lyricsSection">
+          <button id="toggleLyrics" class="lyrics-toggle">Show Lyrics</button>
+          <div class="lyrics-content" id="lyricsContent" style="display: none;"></div>
+        </div>
+
+        <div class="result-actions">
+          <button id="downloadBtn" class="action-btn">Download</button>
+          <button id="newSongBtn" class="action-btn secondary">New Song</button>
+        </div>
+      </div>
+
+      <!-- Error Section -->
+      <div class="error-section" id="errorSection" style="display: none;">
+        <div class="error-message" id="errorMessage"></div>
+        <button id="dismissError" class="dismiss-btn">Dismiss</button>
+      </div>
+    </div>
+
+    <!-- Footer - Hidden by default, can be shown via settings if needed -->
+    <div class="footer" style="display: none;">
+      <div class="config-section">
+        <label for="apiUrl">API URL:</label>
+        <input type="text" id="apiUrl" placeholder="http://localhost:3001" value="http://localhost:3001">
+        <button id="saveConfig" class="config-btn">Save</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+
+</html>
