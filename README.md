@@ -44,7 +44,7 @@ NeuralBeat is a cutting-edge AI-powered music generation platform that transform
 #### Step 1: Clone the Repository
 ```bash
 # Clone the repository
-git clone https://github.com/Nixxx19/verseforge.git
+git clone https://github.com/Kumarkashish511/NeuralBeat.git
 cd aether
 ```
 
